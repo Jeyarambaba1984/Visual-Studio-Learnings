@@ -1,0 +1,2746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://trizetto.com/CareAdvance/UMCaseService/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://trizetto.com/CareAdvance/UMCaseService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UMCase" targetNamespace="http://trizetto.com/CareAdvance/UMCaseService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://trizetto.com/CareAdvance/UMCaseService" location="https://abn-ode-web-c12.ode.trizetto.com/SOAFServices/UMCaseService/UMCase.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/UMCaseService/">
+      <xsd:element name="SearchCases">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:SearchCasesSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="SearchCasesSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q1="http://trizetto.com/CareAdvance/DataContracts" base="q1:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q2="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="SearchCriteria" nillable="true" type="q2:SearchCriteria" />
+              <xsd:element xmlns:q3="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Sort" nillable="true" type="q3:ArrayOfCaseSort" />
+              <xsd:element xmlns:q4="http://trizetto.com/CareAdvance/DataContracts/Page" minOccurs="0" name="Pagination" nillable="true" type="q4:Pagination" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="SearchCasesSvcRequest" nillable="true" type="tns:SearchCasesSvcRequest" />
+      <xsd:element name="SearchCasesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="SearchCasesResult" nillable="true" type="tns:SearchCasesSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="SearchCasesSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q5="http://trizetto.com/CareAdvance/DataContracts" base="q5:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q6="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Cases" nillable="true" type="q6:ArrayOfCaseOverview" />
+              <xsd:element xmlns:q7="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Sort" nillable="true" type="q7:ArrayOfCaseSort" />
+              <xsd:element xmlns:q8="http://trizetto.com/CareAdvance/DataContracts/Page" minOccurs="0" name="Pagination" nillable="true" type="q8:PaginationResponse" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="SearchCasesSvcResponse" nillable="true" type="tns:SearchCasesSvcResponse" />
+      <xsd:element name="CAPSearchCases">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:CAPSearchCasesSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CAPSearchCasesSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q9="http://trizetto.com/CareAdvance/DataContracts" base="q9:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q10="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="CAPSearchCriteria" nillable="true" type="q10:CAPSearchCriteria" />
+              <xsd:element xmlns:q11="http://trizetto.com/CareAdvance/DataContracts/Page" minOccurs="0" name="Pagination" nillable="true" type="q11:Pagination" />
+              <xsd:element xmlns:q12="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Sort" nillable="true" type="q12:ArrayOfCAPCaseSort" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CAPSearchCasesSvcRequest" nillable="true" type="tns:CAPSearchCasesSvcRequest" />
+      <xsd:element name="CAPSearchCasesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="CAPSearchCasesResult" nillable="true" type="tns:CAPSearchCasesSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CAPSearchCasesSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q13="http://trizetto.com/CareAdvance/DataContracts" base="q13:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q14="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Cases" nillable="true" type="q14:ArrayOfCAPCaseOverview" />
+              <xsd:element xmlns:q15="http://trizetto.com/CareAdvance/DataContracts/Page" minOccurs="0" name="Pagination" nillable="true" type="q15:PaginationResponse" />
+              <xsd:element xmlns:q16="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Sort" nillable="true" type="q16:ArrayOfCAPCaseSort" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CAPSearchCasesSvcResponse" nillable="true" type="tns:CAPSearchCasesSvcResponse" />
+      <xsd:element name="GetCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:GetCaseSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="GetCaseSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q17="http://trizetto.com/CareAdvance/DataContracts" base="q17:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ShouldObtainLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="RecalculateProviderNetworkStatus" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="GetCaseSvcRequest" nillable="true" type="tns:GetCaseSvcRequest" />
+      <xsd:element name="GetCaseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetCaseResult" nillable="true" type="tns:GetCaseSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="GetCaseSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q18="http://trizetto.com/CareAdvance/DataContracts" base="q18:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q19="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q19:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="IsLockObtained" type="xsd:boolean" />
+              <xsd:element xmlns:q20="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="Member" nillable="true" type="q20:Member" />
+              <xsd:element xmlns:q21="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="UmCase" nillable="true" type="q21:UmCase" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="GetCaseSvcResponse" nillable="true" type="tns:GetCaseSvcResponse" />
+      <xsd:element name="UnlockCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UnlockCaseSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UnlockCaseSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q22="http://trizetto.com/CareAdvance/DataContracts" base="q22:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UnlockCaseSvcRequest" nillable="true" type="tns:UnlockCaseSvcRequest" />
+      <xsd:element name="UnlockCaseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UnlockCaseResult" nillable="true" type="tns:UnlockCaseSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UnlockCaseSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q23="http://trizetto.com/CareAdvance/DataContracts" base="q23:GenericResponse">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UnlockCaseSvcResponse" nillable="true" type="tns:UnlockCaseSvcResponse" />
+      <xsd:element name="UpdateCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateCaseSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateCaseSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q24="http://trizetto.com/CareAdvance/DataContracts" base="q24:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element xmlns:q25="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q25:ExternalMember" />
+              <xsd:element minOccurs="0" name="OverlapDeniedDays" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element xmlns:q26="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="UmCase" nillable="true" type="q26:UmCase" />
+              <xsd:element minOccurs="0" name="ShouldCreateExternalId" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateCaseSvcRequest" nillable="true" type="tns:UpdateCaseSvcRequest" />
+      <xsd:element name="UpdateCaseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateCaseResult" nillable="true" type="tns:UpdateCaseSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateCaseSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q27="http://trizetto.com/CareAdvance/DataContracts" base="q27:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q28="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q28:SystemSpecificValueOption" />
+              <xsd:element xmlns:q29="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q29:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateCaseSvcResponse" nillable="true" type="tns:UpdateCaseSvcResponse" />
+      <xsd:element name="AddExtension">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:AddExtensionSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddExtensionSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q30="http://trizetto.com/CareAdvance/DataContracts" base="q30:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q31="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Extension" nillable="true" type="q31:Extension" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q32="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q32:ExternalMember" />
+              <xsd:element minOccurs="0" name="OverlapDeniedDays" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddExtensionSvcRequest" nillable="true" type="tns:AddExtensionSvcRequest" />
+      <xsd:element name="AddExtensionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="AddExtensionResult" nillable="true" type="tns:AddExtensionSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddExtensionSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q33="http://trizetto.com/CareAdvance/DataContracts" base="q33:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q34="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q34:SystemSpecificValueOption" />
+              <xsd:element xmlns:q35="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q35:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalExtensionId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalLosId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddExtensionSvcResponse" nillable="true" type="tns:AddExtensionSvcResponse" />
+      <xsd:element name="AddCertification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:AddCertificationSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddCertificationSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q36="http://trizetto.com/CareAdvance/DataContracts" base="q36:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q37="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Certification" nillable="true" type="q37:Certification" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q38="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q38:ExternalMember" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddCertificationSvcRequest" nillable="true" type="tns:AddCertificationSvcRequest" />
+      <xsd:element name="AddCertificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="AddCertificationResult" nillable="true" type="tns:AddCertificationSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddCertificationSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q39="http://trizetto.com/CareAdvance/DataContracts" base="q39:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q40="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q40:SystemSpecificValueOption" />
+              <xsd:element xmlns:q41="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q41:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalCertificationId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddCertificationSvcResponse" nillable="true" type="tns:AddCertificationSvcResponse" />
+      <xsd:element name="AddService">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:AddServiceSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddServiceSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q42="http://trizetto.com/CareAdvance/DataContracts" base="q42:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q43="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q43:ExternalMember" />
+              <xsd:element xmlns:q44="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Service" nillable="true" type="q44:Service" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddServiceSvcRequest" nillable="true" type="tns:AddServiceSvcRequest" />
+      <xsd:element name="AddServiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="AddServiceResult" nillable="true" type="tns:AddServiceSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddServiceSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q45="http://trizetto.com/CareAdvance/DataContracts" base="q45:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q46="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Actions" nillable="true" type="q46:ArrayOfBrsAction" />
+              <xsd:element xmlns:q47="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q47:SystemSpecificValueOption" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddServiceSvcResponse" nillable="true" type="tns:AddServiceSvcResponse" />
+      <xsd:element name="CreateCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:CreateCaseSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CreateCaseSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q48="http://trizetto.com/CareAdvance/DataContracts" base="q48:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q49="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q49:ExternalMember" />
+              <xsd:element xmlns:q50="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="ProcessingOptions" nillable="true" type="q50:CaseProcessingOptions" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element xmlns:q51="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="UmCase" nillable="true" type="q51:UmCase" />
+              <xsd:element minOccurs="0" name="ShouldReturnCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateCaseSvcRequest" nillable="true" type="tns:CreateCaseSvcRequest" />
+      <xsd:element name="CreateCaseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="CreateCaseResult" nillable="true" type="tns:CreateCaseSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CreateCaseSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q52="http://trizetto.com/CareAdvance/DataContracts" base="q52:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q53="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="AuthRequirementResult" nillable="true" type="q53:AuthRequirementResult" />
+              <xsd:element xmlns:q54="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q54:SystemSpecificValueOption" />
+              <xsd:element xmlns:q55="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q55:ArrayOfBrsAction" />
+              <xsd:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DuplicateCaseIds" nillable="true" type="q56:ArrayOfstring" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+              <xsd:element xmlns:q57="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="UmCase" nillable="true" type="q57:UmCase" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateCaseSvcResponse" nillable="true" type="tns:CreateCaseSvcResponse" />
+      <xsd:element name="InsertForeignCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:InsertForeignCaseSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="InsertForeignCaseSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q58="http://trizetto.com/CareAdvance/DataContracts" base="q58:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q59="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q59:ExternalMember" />
+              <xsd:element xmlns:q60="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="ProcessingOptions" nillable="true" type="q60:CaseProcessingOptions" />
+              <xsd:element xmlns:q61="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="UmCase" nillable="true" type="q61:UmCase" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InsertForeignCaseSvcRequest" nillable="true" type="tns:InsertForeignCaseSvcRequest" />
+      <xsd:element name="InsertForeignCaseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="InsertForeignCaseResult" nillable="true" type="tns:InsertForeignCaseSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="InsertForeignCaseSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q62="http://trizetto.com/CareAdvance/DataContracts" base="q62:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DuplicateCaseIds" nillable="true" type="q63:ArrayOfstring" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InsertForeignCaseSvcResponse" nillable="true" type="tns:InsertForeignCaseSvcResponse" />
+      <xsd:element name="UpdateForeignCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateForeignCaseSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateForeignCaseSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q64="http://trizetto.com/CareAdvance/DataContracts" base="q64:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element xmlns:q65="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q65:ExternalMember" />
+              <xsd:element xmlns:q66="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="UmCase" nillable="true" type="q66:UmCase" />
+              <xsd:element minOccurs="0" name="ShouldCreateExternalId" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateForeignCaseSvcRequest" nillable="true" type="tns:UpdateForeignCaseSvcRequest" />
+      <xsd:element name="UpdateForeignCaseResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateForeignCaseResult" nillable="true" type="tns:UpdateForeignCaseSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateForeignCaseSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q67="http://trizetto.com/CareAdvance/DataContracts" base="q67:GenericResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateForeignCaseSvcResponse" nillable="true" type="tns:UpdateForeignCaseSvcResponse" />
+      <xsd:element name="UpdateService">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateServiceSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateServiceSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q68="http://trizetto.com/CareAdvance/DataContracts" base="q68:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q69="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q69:ExternalMember" />
+              <xsd:element xmlns:q70="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Service" nillable="true" type="q70:Service" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldCreateExternalId" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateServiceSvcRequest" nillable="true" type="tns:UpdateServiceSvcRequest" />
+      <xsd:element name="UpdateServiceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateServiceResult" nillable="true" type="tns:UpdateServiceSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateServiceSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q71="http://trizetto.com/CareAdvance/DataContracts" base="q71:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q72="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q72:SystemSpecificValueOption" />
+              <xsd:element xmlns:q73="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q73:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateServiceSvcResponse" nillable="true" type="tns:UpdateServiceSvcResponse" />
+      <xsd:element name="UpdateLos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateLosSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateLosSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q74="http://trizetto.com/CareAdvance/DataContracts" base="q74:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q75="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q75:ExternalMember" />
+              <xsd:element xmlns:q76="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Los" nillable="true" type="q76:Los" />
+              <xsd:element minOccurs="0" name="OverlapDeniedDays" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldCreateExternalId" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateLosSvcRequest" nillable="true" type="tns:UpdateLosSvcRequest" />
+      <xsd:element name="UpdateLosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateLosResult" nillable="true" type="tns:UpdateLosSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateLosSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q77="http://trizetto.com/CareAdvance/DataContracts" base="q77:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q78="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q78:SystemSpecificValueOption" />
+              <xsd:element xmlns:q79="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q79:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalLosId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateLosSvcResponse" nillable="true" type="tns:UpdateLosSvcResponse" />
+      <xsd:element name="UpdateCertification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateCertificationSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateCertificationSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q80="http://trizetto.com/CareAdvance/DataContracts" base="q80:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element xmlns:q81="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Certification" nillable="true" type="q81:Certification" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q82="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q82:ExternalMember" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateCertificationSvcRequest" nillable="true" type="tns:UpdateCertificationSvcRequest" />
+      <xsd:element name="UpdateCertificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateCertificationResult" nillable="true" type="tns:UpdateCertificationSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateCertificationSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q83="http://trizetto.com/CareAdvance/DataContracts" base="q83:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q84="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q84:SystemSpecificValueOption" />
+              <xsd:element xmlns:q85="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q85:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalCertificationId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateCertificationSvcResponse" nillable="true" type="tns:UpdateCertificationSvcResponse" />
+      <xsd:element name="UpdateExtension">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateExtensionSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateExtensionSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q86="http://trizetto.com/CareAdvance/DataContracts" base="q86:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element xmlns:q87="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="Extension" nillable="true" type="q87:Extension" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q88="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q88:ExternalMember" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateExtensionSvcRequest" nillable="true" type="tns:UpdateExtensionSvcRequest" />
+      <xsd:element name="UpdateExtensionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateExtensionResult" nillable="true" type="tns:UpdateExtensionSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateExtensionSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q89="http://trizetto.com/CareAdvance/DataContracts" base="q89:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q90="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q90:SystemSpecificValueOption" />
+              <xsd:element xmlns:q91="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q91:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalExtensionId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalLosId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsPending" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateExtensionSvcResponse" nillable="true" type="tns:UpdateExtensionSvcResponse" />
+      <xsd:element name="AddDrg">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:AddDrgSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddDrgSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q92="http://trizetto.com/CareAdvance/DataContracts" base="q92:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q93="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="DrgData" nillable="true" type="q93:DrgData" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q94="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q94:ExternalMember" />
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddDrgSvcRequest" nillable="true" type="tns:AddDrgSvcRequest" />
+      <xsd:element name="AddDrgResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="AddDrgResult" nillable="true" type="tns:AddDrgSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="AddDrgSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q95="http://trizetto.com/CareAdvance/DataContracts" base="q95:GenericResponse">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="AddDrgSvcResponse" nillable="true" type="tns:AddDrgSvcResponse" />
+      <xsd:element name="CreateRoute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:CreateRouteSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CreateRouteSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q96="http://trizetto.com/CareAdvance/DataContracts" base="q96:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Body" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q97="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q97:CustomFields" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalRouteId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="RecipientQueueId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q98="http://trizetto.com/CareAdvance/DataContracts/User" minOccurs="0" name="RecipientUser" nillable="true" type="q98:ExternalUser" />
+              <xsd:element xmlns:q99="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="RouteDetailsList" nillable="true" type="q99:ArrayOfCommunicationDetail" />
+              <xsd:element xmlns:q100="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RoutePriority" nillable="true" type="q100:SystemSpecificValueOption" />
+              <xsd:element xmlns:q101="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RouteType" nillable="true" type="q101:SystemSpecificValueOption" />
+              <xsd:element minOccurs="0" name="Subject" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateRouteSvcRequest" nillable="true" type="tns:CreateRouteSvcRequest" />
+      <xsd:element name="CreateRouteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="CreateRouteResult" nillable="true" type="tns:CreateRouteSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="CreateRouteSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q102="http://trizetto.com/CareAdvance/DataContracts" base="q102:GenericResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalRouteId" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CreateRouteSvcResponse" nillable="true" type="tns:CreateRouteSvcResponse" />
+      <xsd:element name="UpdateCertificationStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:UpdateCertificationStatusSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateCertificationStatusSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q103="http://trizetto.com/CareAdvance/DataContracts" base="q103:GenericRequest">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ShouldReleaseLock" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ShouldReturnBrsActions" nillable="true" type="xsd:boolean" />
+              <xsd:element xmlns:q104="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="StatusList" nillable="true" type="q104:ArrayOfCertificationAuthStatus" />
+              <xsd:element minOccurs="0" name="CaseLastUpdateDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q105="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q105:ExternalMember" />
+              <xsd:element minOccurs="0" name="ReopenClosedCase" nillable="true" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateCertificationStatusSvcRequest" nillable="true" type="tns:UpdateCertificationStatusSvcRequest" />
+      <xsd:element name="UpdateCertificationStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="UpdateCertificationStatusResult" nillable="true" type="tns:UpdateCertificationStatusSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="UpdateCertificationStatusSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q106="http://trizetto.com/CareAdvance/DataContracts" base="q106:GenericResponse">
+            <xsd:sequence>
+              <xsd:element xmlns:q107="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q107:SystemSpecificValueOption" />
+              <xsd:element xmlns:q108="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="BrsActions" nillable="true" type="q108:ArrayOfBrsAction" />
+              <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q109="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="StatusList" nillable="true" type="q109:ArrayOfCertificationAuthStatusResponse" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UpdateCertificationStatusSvcResponse" nillable="true" type="tns:UpdateCertificationStatusSvcResponse" />
+      <xsd:element name="PreLoadMemberBrsCache">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="request" nillable="true" type="tns:PreLoadMemberBrsCacheSvcRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="PreLoadMemberBrsCacheSvcRequest">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q110="http://trizetto.com/CareAdvance/DataContracts" base="q110:GenericRequest">
+            <xsd:sequence>
+              <xsd:element xmlns:q111="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q111:ExternalMember" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="PreLoadMemberBrsCacheSvcRequest" nillable="true" type="tns:PreLoadMemberBrsCacheSvcRequest" />
+      <xsd:element name="PreLoadMemberBrsCacheResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="PreLoadMemberBrsCacheResult" nillable="true" type="tns:PreLoadMemberBrsCacheSvcResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="PreLoadMemberBrsCacheSvcResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q112="http://trizetto.com/CareAdvance/DataContracts" base="q112:GenericResponse">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="PreLoadMemberBrsCacheSvcResponse" nillable="true" type="tns:PreLoadMemberBrsCacheSvcResponse" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/UMCase" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/UMCase">
+      <xsd:complexType name="SearchCriteria">
+        <xsd:sequence>
+          <xsd:element xmlns:q113="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="MemberCriteria" nillable="true" type="q113:MemberCriteria" />
+          <xsd:element minOccurs="0" name="Providers" nillable="true" type="tns:ArrayOfProviderSearchCriteria" />
+          <xsd:element minOccurs="0" name="CaseCriteria" nillable="true" type="tns:CaseCriteria" />
+          <xsd:element minOccurs="0" name="RecalculateProviderNetworkStatus" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+      <xsd:complexType name="ArrayOfProviderSearchCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProviderSearchCriteria" nillable="true" type="tns:ProviderSearchCriteria" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfProviderSearchCriteria" nillable="true" type="tns:ArrayOfProviderSearchCriteria" />
+      <xsd:complexType name="ProviderSearchCriteria">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q114="http://trizetto.com/CareAdvance/DataContracts/Provider" base="q114:ProviderSearchCriteria">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="AdditionalSearchConditions" nillable="true" type="tns:ArrayOfProviderSearchCondition" />
+              <xsd:element minOccurs="0" name="CaseExclusionCriteria" nillable="true" type="tns:ArrayOfCaseTypeCriteria" />
+              <xsd:element minOccurs="0" name="ProviderExternalIds" nillable="true" type="q114:ArrayOfExternalProvider" />
+              <xsd:element minOccurs="0" name="ProviderType" type="q114:ProviderType" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ProviderSearchCriteria" nillable="true" type="tns:ProviderSearchCriteria" />
+      <xsd:complexType name="ArrayOfProviderSearchCondition">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProviderSearchCondition" nillable="true" type="tns:ProviderSearchCondition" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfProviderSearchCondition" nillable="true" type="tns:ArrayOfProviderSearchCondition" />
+      <xsd:complexType name="ProviderSearchCondition">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CaseExclusionCriteria" nillable="true" type="tns:ArrayOfCaseTypeCriteria" />
+          <xsd:element xmlns:q115="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="ProviderType" type="q115:ProviderType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProviderSearchCondition" nillable="true" type="tns:ProviderSearchCondition" />
+      <xsd:complexType name="ArrayOfCaseTypeCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CaseTypeCriteria" nillable="true" type="tns:CaseTypeCriteria" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCaseTypeCriteria" nillable="true" type="tns:ArrayOfCaseTypeCriteria" />
+      <xsd:complexType name="CaseTypeCriteria">
+        <xsd:sequence>
+          <xsd:element xmlns:q116="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CaseType" nillable="true" type="q116:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CaseTypeCriteria" nillable="true" type="tns:CaseTypeCriteria" />
+      <xsd:complexType name="CaseCriteria">
+        <xsd:sequence>
+          <xsd:element xmlns:q117="http://schemas.datacontract.org/2004/07/Trizetto.CareAdvance.Service.DataContracts.AppealsGrievances" minOccurs="0" name="Appeals" nillable="true" type="q117:AppealCriteria" />
+          <xsd:element minOccurs="0" name="AuthStatusSummary" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="CaseNoteAddedSinceDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="CasePriority" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="CaseSetting" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="CaseSource" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="CaseStatusChangeSinceDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="CaseUpdateSinceDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q118="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q118:ArrayOfCustomFieldCriteria" />
+          <xsd:element minOccurs="0" name="DelegateSystem" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="NextReviewAction" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Procedure" nillable="true" type="tns:Procedure" />
+          <xsd:element minOccurs="0" name="RequestingProviderRole" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="ReviewType" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="ShouldReturnCustomFields" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ShouldReturnIncompleteAuthorizations" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ShouldReturnVoidAuthorizations" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CaseCriteria" nillable="true" type="tns:CaseCriteria" />
+      <xsd:complexType name="Procedure">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Code" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CodeSetId" nillable="true" type="tns:ProcedureCodeSet" />
+          <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ProcedureDate" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Procedure" nillable="true" type="tns:Procedure" />
+      <xsd:simpleType name="ProcedureCodeSet">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ICD9">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ICD10">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CPT">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HCPCS">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ServiceGroup">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ProcedureCodeSet" nillable="true" type="tns:ProcedureCodeSet" />
+      <xsd:complexType name="ArrayOfCaseSort">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CaseSort" nillable="true" type="tns:CaseSort" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCaseSort" nillable="true" type="tns:ArrayOfCaseSort" />
+      <xsd:complexType name="CaseSort">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q119="http://trizetto.com/CareAdvance/DataContracts/Page" base="q119:Sort">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="SortBy" nillable="true" type="tns:CaseSortableFields" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CaseSort" nillable="true" type="tns:CaseSort" />
+      <xsd:simpleType name="CaseSortableFields">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Unknown">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="MemberLastName">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="MemberFirstName">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="FromDate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ToDate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PrimaryDiagnosisCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PrimaryProcedureCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PlaceOfService">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CasePriority">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AuthStatusSummary">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="RequestingProviderName">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TreatingProviderName">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="FacilityName">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PCPProviderName">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExternalCaseId">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExternalSystemId">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ReviewType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CaseSetting">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CasePhase">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="LastUpdateDate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PrimaryProcedureDescription">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HasQuestionnaire">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HasGuideline">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HasRulesBasedCommunication">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HasProviderActions">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HasProviderCommunication">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HasProviderCommunicationAttachments">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="CaseSortableFields" nillable="true" type="tns:CaseSortableFields" />
+      <xsd:complexType name="ArrayOfCaseOverview">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CaseOverview" nillable="true" type="tns:CaseOverview" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCaseOverview" nillable="true" type="tns:ArrayOfCaseOverview" />
+      <xsd:complexType name="CaseOverview">
+        <xsd:sequence>
+          <xsd:element xmlns:q120="http://schemas.datacontract.org/2004/07/Trizetto.CareAdvance.Service.DataContracts.AppealsGrievances" minOccurs="0" name="Appeals" nillable="true" type="q120:ArrayOfAppeal" />
+          <xsd:element xmlns:q121="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q121:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Authorizations" nillable="true" type="tns:ArrayOfAuthorizationOverview" />
+          <xsd:element xmlns:q122="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CasePriority" nillable="true" type="q122:SystemSpecificValueOption" />
+          <xsd:element xmlns:q123="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CaseSetting" nillable="true" type="q123:SystemSpecificValueOption" />
+          <xsd:element xmlns:q124="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CaseType" nillable="true" type="q124:SystemSpecificValueOption" />
+          <xsd:element xmlns:q125="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q125:CustomFields" />
+          <xsd:element xmlns:q126="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="DelegateSystem" nillable="true" type="q126:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q127="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="Facility" nillable="true" type="q127:ProviderOverview" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="HasCriteria" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasGuideline" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasProviderActions" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasProviderCommunication" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasProviderCommunicationAttachments" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasQuestionnaire" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasRulesBasedCommunication" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="LastUpdateDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q128="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="Member" nillable="true" type="q128:Member" />
+          <xsd:element xmlns:q129="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Phase" nillable="true" type="q129:SystemSpecificValueOption" />
+          <xsd:element xmlns:q130="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="PlaceOfService" nillable="true" type="q130:SystemSpecificValueOption" />
+          <xsd:element xmlns:q131="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="PrimaryCarePhysician" nillable="true" type="q131:ProviderOverview" />
+          <xsd:element minOccurs="0" name="PrimaryDiagnosisCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PrimaryDiagnosisDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PrimaryProcedureCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PrimaryProcedureDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="RegulatoryDueDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q132="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="RequestingProvider" nillable="true" type="q132:ProviderOverview" />
+          <xsd:element xmlns:q133="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ReviewType" nillable="true" type="q133:SystemSpecificValueOption" />
+          <xsd:element xmlns:q134="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Source" nillable="true" type="q134:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="StatusChangeDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q135="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="TreatingProvider" nillable="true" type="q135:ProviderOverview" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CaseOverview" nillable="true" type="tns:CaseOverview" />
+      <xsd:complexType name="User">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="User" nillable="true" type="tns:User" />
+      <xsd:complexType name="ArrayOfAuthorizationOverview">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="AuthorizationOverview" nillable="true" type="tns:AuthorizationOverview" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfAuthorizationOverview" nillable="true" type="tns:ArrayOfAuthorizationOverview" />
+      <xsd:complexType name="AuthorizationOverview">
+        <xsd:sequence>
+          <xsd:element xmlns:q136="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="AuthRequestCustomFields" nillable="true" type="q136:CustomFields" />
+          <xsd:element minOccurs="0" name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+          <xsd:element xmlns:q137="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="Facility" nillable="true" type="q137:ProviderOverview" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="IsLos" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsPrimary" nillable="true" type="xsd:boolean" />
+          <xsd:element xmlns:q138="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="LineItemCustomFields" nillable="true" type="q138:CustomFields" />
+          <xsd:element minOccurs="0" name="Procedure" nillable="true" type="tns:Procedure" />
+          <xsd:element xmlns:q139="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="RequestingProvider" nillable="true" type="q139:ProviderOverview" />
+          <xsd:element xmlns:q140="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ServiceType" nillable="true" type="q140:SystemSpecificValueOption" />
+          <xsd:element xmlns:q141="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Status" nillable="true" type="q141:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q142="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="TreatingProvider" nillable="true" type="q142:ProviderOverview" />
+          <xsd:element minOccurs="0" name="Units" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AuthorizationOverview" nillable="true" type="tns:AuthorizationOverview" />
+      <xsd:complexType name="Diagnosis">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Code" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CodeSetId" nillable="true" type="tns:DiagnosisCodeSet" />
+          <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q143="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="PoaIndicator" nillable="true" type="q143:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+      <xsd:simpleType name="DiagnosisCodeSet">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ICD9">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ICD10">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="DiagnosisCodeSet" nillable="true" type="tns:DiagnosisCodeSet" />
+      <xsd:complexType name="CAPSearchCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CAPCaseCriteria" nillable="true" type="tns:CAPCaseCriteria" />
+          <xsd:element xmlns:q144="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="CAPMemberCriteria" nillable="true" type="q144:ExternalMember" />
+          <xsd:element minOccurs="0" name="CAPProvidersCriteria" nillable="true" type="tns:ArrayOfCAPProvidersCriteria" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CAPSearchCriteria" nillable="true" type="tns:CAPSearchCriteria" />
+      <xsd:complexType name="CAPCaseCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AuthStatusSummary" nillable="true" type="tns:AuthStatusSummary" />
+          <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ReviewType" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="ShouldReturnIncompleteAuthorizations" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ShouldReturnVoidAuthorizations" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CAPCaseCriteria" nillable="true" type="tns:CAPCaseCriteria" />
+      <xsd:simpleType name="AuthStatusSummary">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Unknown" />
+          <xsd:enumeration value="Incomplete" />
+          <xsd:enumeration value="PendingDecision" />
+          <xsd:enumeration value="FullyApproved" />
+          <xsd:enumeration value="PartiallyApproved" />
+          <xsd:enumeration value="Denied" />
+          <xsd:enumeration value="Voided" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="AuthStatusSummary" nillable="true" type="tns:AuthStatusSummary" />
+      <xsd:complexType name="ArrayOfCAPProvidersCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CAPProvidersCriteria" nillable="true" type="tns:CAPProvidersCriteria" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCAPProvidersCriteria" nillable="true" type="tns:ArrayOfCAPProvidersCriteria" />
+      <xsd:complexType name="CAPProvidersCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AdditionalSearchConditions" nillable="true" type="tns:ArrayOfProviderSearchCondition" />
+          <xsd:element minOccurs="0" name="CaseExclusionCriteria" nillable="true" type="tns:ArrayOfCaseTypeCriteria" />
+          <xsd:element xmlns:q145="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="ProviderExternalIds" nillable="true" type="q145:ArrayOfExternalProvider" />
+          <xsd:element xmlns:q146="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="ProviderType" type="q146:ProviderType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CAPProvidersCriteria" nillable="true" type="tns:CAPProvidersCriteria" />
+      <xsd:complexType name="ArrayOfCAPCaseSort">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CAPCaseSort" nillable="true" type="tns:CAPCaseSort" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCAPCaseSort" nillable="true" type="tns:ArrayOfCAPCaseSort" />
+      <xsd:complexType name="CAPCaseSort">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q147="http://trizetto.com/CareAdvance/DataContracts/Page" base="q147:Sort">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="SortBy" type="tns:CAPCaseSortableFields" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CAPCaseSort" nillable="true" type="tns:CAPCaseSort" />
+      <xsd:simpleType name="CAPCaseSortableFields">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Unknown" />
+          <xsd:enumeration value="ExternalSystemId" />
+          <xsd:enumeration value="MemberFirstName" />
+          <xsd:enumeration value="MemberLastName" />
+          <xsd:enumeration value="EarliestAuthFromDate" />
+          <xsd:enumeration value="LatestAuthToDate" />
+          <xsd:enumeration value="PrimaryProcedureDescription" />
+          <xsd:enumeration value="HasProviderActions" />
+          <xsd:enumeration value="RequestingProviderName" />
+          <xsd:enumeration value="TreatingProviderName" />
+          <xsd:enumeration value="HasProviderCommunication" />
+          <xsd:enumeration value="HasProviderCommunicationAttachments" />
+          <xsd:enumeration value="ExternalCaseId" />
+          <xsd:enumeration value="AuthStatusSummary" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="CAPCaseSortableFields" nillable="true" type="tns:CAPCaseSortableFields" />
+      <xsd:complexType name="ArrayOfCAPCaseOverview">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CAPCaseOverview" nillable="true" type="tns:CAPCaseOverview" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCAPCaseOverview" nillable="true" type="tns:ArrayOfCAPCaseOverview" />
+      <xsd:complexType name="CAPCaseOverview">
+        <xsd:sequence>
+          <xsd:element xmlns:q148="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q148:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="CAPMember" nillable="true" type="tns:Member" />
+          <xsd:element xmlns:q149="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CaseSetting" nillable="true" type="q149:SystemSpecificValueOption" />
+          <xsd:element xmlns:q150="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q150:CustomFields" />
+          <xsd:element xmlns:q151="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="DelegateSystem" nillable="true" type="q151:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FacilityName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="HasProviderActions" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasProviderCommunication" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasProviderCommunicationAttachments" type="xsd:boolean" />
+          <xsd:element xmlns:q152="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="PlaceOfService" nillable="true" type="q152:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="PrimaryProcedureCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PrimaryProcedureDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="RequestingProviderName" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q153="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ReviewType" nillable="true" type="q153:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="TreatingProviderName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CAPCaseOverview" nillable="true" type="tns:CAPCaseOverview" />
+      <xsd:complexType name="Member">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q154="http://trizetto.com/CareAdvance/DataContracts/Member" base="q154:ExternalMember">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="DateOfBirth" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Member" nillable="true" type="tns:Member" />
+      <xsd:complexType name="ArrayOfBrsAction">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="BrsAction" nillable="true" type="tns:BrsAction" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfBrsAction" nillable="true" type="tns:ArrayOfBrsAction" />
+      <xsd:complexType name="BrsAction">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ActionableByProvider" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="Detail" nillable="true" type="tns:BrsDetail" />
+          <xsd:element minOccurs="0" name="EntityId" nillable="true" type="xsd:int" />
+          <xsd:element xmlns:q155="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="EntityType" type="q155:EntityType" />
+          <xsd:element minOccurs="0" name="IsExternalSystemAction" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ParentId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Priority" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Reason" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q156="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Type" nillable="true" type="q156:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BrsAction" nillable="true" type="tns:BrsAction" />
+      <xsd:complexType name="BrsDetail">
+        <xsd:sequence>
+          <xsd:element xmlns:q157="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AutoMessageType" nillable="true" type="q157:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="CptCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalCaseId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q158="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="ExternalMember" nillable="true" type="q158:ExternalMember" />
+          <xsd:element minOccurs="0" name="HsimCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IcdCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="TemplateId" nillable="true" type="xsd:int" />
+          <xsd:element xmlns:q159="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Type" nillable="true" type="q159:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BrsDetail" nillable="true" type="tns:BrsDetail" />
+      <xsd:complexType name="UmCase">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AccidentDateTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q160="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AccidentGeographicState" nillable="true" type="q160:SystemSpecificValueOption" />
+          <xsd:element xmlns:q161="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AccidentIndicator" nillable="true" type="q161:SystemSpecificValueOption" />
+          <xsd:element xmlns:q162="http://trizetto.com/CareAdvance/DataContracts/Queue" minOccurs="0" name="AssignedToQueue" nillable="true" type="q162:Queue" />
+          <xsd:element minOccurs="0" name="AssignedToUser" nillable="true" type="tns:User" />
+          <xsd:element xmlns:q163="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AuthStatusSummary" nillable="true" type="q163:SystemSpecificValueOption" />
+          <xsd:element xmlns:q164="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CareType" nillable="true" type="q164:SystemSpecificValueOption" />
+          <xsd:element xmlns:q165="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CasePriority" nillable="true" type="q165:SystemSpecificValueOption" />
+          <xsd:element xmlns:q166="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CaseSetting" nillable="true" type="q166:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="CaseStatus" nillable="true" type="tns:CaseStatus" />
+          <xsd:element xmlns:q167="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CaseType" nillable="true" type="q167:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ContactName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ContactPhone" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q168="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q168:CustomFields" />
+          <xsd:element xmlns:q169="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="DelegateSystem" nillable="true" type="q169:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="DsmIV" nillable="true" type="tns:DsmIV" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="GlobalCaseIndicator" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="HasCommunications" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsUrgent" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="LastUpdateDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Los" nillable="true" type="tns:Los" />
+          <xsd:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfWebNote" />
+          <xsd:element minOccurs="0" name="OnsetDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q170="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="PatientRisk" nillable="true" type="q170:SystemSpecificValueOption" />
+          <xsd:element xmlns:q171="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Phase" nillable="true" type="q171:SystemSpecificValueOption" />
+          <xsd:element xmlns:q172="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="PlaceOfService" nillable="true" type="q172:SystemSpecificValueOption" />
+          <xsd:element xmlns:q173="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="PrimaryCarePhysician" nillable="true" type="q173:Provider" />
+          <xsd:element minOccurs="0" name="RegulatoryDueDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q174="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RegulatoryRequestType" nillable="true" type="q174:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="RequestDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Requester" nillable="true" type="tns:Requester" />
+          <xsd:element xmlns:q175="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ReviewType" nillable="true" type="q175:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="SecondaryDiagnoses" nillable="true" type="tns:ArrayOfDiagnosis" />
+          <xsd:element minOccurs="0" name="SecondaryProcedures" nillable="true" type="tns:ArrayOfProcedure" />
+          <xsd:element minOccurs="0" name="Services" nillable="true" type="tns:ArrayOfService" />
+          <xsd:element xmlns:q176="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Source" nillable="true" type="q176:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="WorkflowRunMode" nillable="true" type="tns:WorkflowRunMode" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UmCase" nillable="true" type="tns:UmCase" />
+      <xsd:complexType name="CaseStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q177="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" base="q177:SystemSpecificValueOption">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="CaseCloseReasonNote" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="CaseCloseReasonType" nillable="true" type="q177:SystemSpecificValueOption" />
+              <xsd:element minOccurs="0" name="CaseOpenReasonNote" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="CaseOpenReasonType" nillable="true" type="q177:SystemSpecificValueOption" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CaseStatus" nillable="true" type="tns:CaseStatus" />
+      <xsd:complexType name="DsmIV">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AxisIVProblemNote" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="AxisVGaf" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DsmAxis" nillable="true" type="tns:ArrayOfDsmAxis" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DsmIV" nillable="true" type="tns:DsmIV" />
+      <xsd:complexType name="ArrayOfDsmAxis">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DsmAxis" nillable="true" type="tns:DsmAxis" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDsmAxis" nillable="true" type="tns:ArrayOfDsmAxis" />
+      <xsd:complexType name="DsmAxis">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AxisNumber" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="IcdCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IcdCodeSetId" nillable="true" type="tns:DiagnosisCodeSet" />
+          <xsd:element minOccurs="0" name="IcdDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IsPrimary" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DsmAxis" nillable="true" type="tns:DsmAxis" />
+      <xsd:complexType name="Los">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ActualAdmissionDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ActualDischargeDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q178="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="AdmittingProvider" nillable="true" type="q178:Provider" />
+          <xsd:element xmlns:q179="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="AttendingProvider" nillable="true" type="q179:Provider" />
+          <xsd:element minOccurs="0" name="AuthorizedAdmissionDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q180="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q180:CustomFields" />
+          <xsd:element minOccurs="0" name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+          <xsd:element xmlns:q181="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="DischargeDisposition" nillable="true" type="q181:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ExpectedDischargeDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Extensions" nillable="true" type="tns:ArrayOfExtension" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q182="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="Facility" nillable="true" type="q182:Provider" />
+          <xsd:element minOccurs="0" name="FinalCareDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="HasCommunications" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="OriginalRequestedDays" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Procedure" nillable="true" type="tns:Procedure" />
+          <xsd:element minOccurs="0" name="RequestedAdmissionDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="RequestedDischargeDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q183="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="RequestingProvider" nillable="true" type="q183:Provider" />
+          <xsd:element xmlns:q184="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ServiceType" nillable="true" type="q184:SystemSpecificValueOption" />
+          <xsd:element xmlns:q185="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="SurgeonProvider" nillable="true" type="q185:Provider" />
+          <xsd:element minOccurs="0" name="TotalApprovedDays" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="TotalCost" nillable="true" type="xsd:float" />
+          <xsd:element minOccurs="0" name="TotalDeniedDays" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="TotalPendingDays" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="TotalRequestedDays" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="TotalSavings" nillable="true" type="xsd:float" />
+          <xsd:element xmlns:q186="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="TreatingProvider" nillable="true" type="q186:Provider" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Los" nillable="true" type="tns:Los" />
+      <xsd:complexType name="ArrayOfExtension">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Extension" nillable="true" type="tns:Extension" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfExtension" nillable="true" type="tns:ArrayOfExtension" />
+      <xsd:complexType name="Extension">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AuthorizedDays" nillable="true" type="xsd:int" />
+          <xsd:element xmlns:q187="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="BedType" nillable="true" type="q187:SystemSpecificValueOption" />
+          <xsd:element xmlns:q188="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="Coverage" nillable="true" type="q188:Eligibility" />
+          <xsd:element xmlns:q189="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q189:CustomFields" />
+          <xsd:element minOccurs="0" name="DueDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FacilityNotificationLetterTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="FacilityNotificationTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q190="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="FacilityNotificationType" nillable="true" type="q190:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="LOA" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="MemberNotificationLetterTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="MemberNotificationTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q191="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="MemberNotificationType" nillable="true" type="q191:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Payment" nillable="true" type="tns:Payment" />
+          <xsd:element minOccurs="0" name="ProviderNotificationLetterTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ProviderNotificationTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q192="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ProviderNotificationType" nillable="true" type="q192:SystemSpecificValueOption" />
+          <xsd:element xmlns:q193="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RegulatoryRequestType" nillable="true" type="q193:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="RequestCreatedOn" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="RequestedDays" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Status" nillable="true" type="tns:ExtensionStatus" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Extension" nillable="true" type="tns:Extension" />
+      <xsd:complexType name="Payment">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CostSavings" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="Penalty" nillable="true" type="tns:Penalty" />
+          <xsd:element minOccurs="0" name="Rate" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="RateDiscountAmount" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="RateDiscountPercent" nillable="true" type="xsd:decimal" />
+          <xsd:element xmlns:q194="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RateReason" nillable="true" type="q194:SystemSpecificValueOption" />
+          <xsd:element xmlns:q195="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RateType" nillable="true" type="q195:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="ReconciledCostDifferenceReason" nillable="true" type="tns:ReconciledCostDifferenceReason" />
+          <xsd:element minOccurs="0" name="ReconciledTotalCost" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="ReconciledTotalSavings" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="TotalCost" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Payment" nillable="true" type="tns:Payment" />
+      <xsd:complexType name="Penalty">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q196="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" base="q196:SystemSpecificValueOption">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Notes" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Waiver" nillable="true" type="q196:SystemSpecificValueOption" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Penalty" nillable="true" type="tns:Penalty" />
+      <xsd:complexType name="ReconciledCostDifferenceReason">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q197="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" base="q197:SystemSpecificValueOption">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Notes" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ReconciledCostDifferenceReason" nillable="true" type="tns:ReconciledCostDifferenceReason" />
+      <xsd:complexType name="ExtensionStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q198="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" base="q198:SystemSpecificValueOption">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="StatusChangeReason" nillable="true" type="q198:SystemSpecificValueOption" />
+              <xsd:element minOccurs="0" name="StatusChangeReasonNotes" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ExtensionStatus" nillable="true" type="tns:ExtensionStatus" />
+      <xsd:complexType name="ArrayOfWebNote">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="WebNote" nillable="true" type="tns:WebNote" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfWebNote" nillable="true" type="tns:ArrayOfWebNote" />
+      <xsd:complexType name="WebNote">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CreateDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Id" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Subject" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Text" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="WebNote" nillable="true" type="tns:WebNote" />
+      <xsd:complexType name="Requester">
+        <xsd:sequence>
+          <xsd:element xmlns:q199="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="CodeSystem" nillable="true" type="q199:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Id" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Phone" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q200="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Type" nillable="true" type="q200:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Requester" nillable="true" type="tns:Requester" />
+      <xsd:complexType name="ArrayOfDiagnosis">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDiagnosis" nillable="true" type="tns:ArrayOfDiagnosis" />
+      <xsd:complexType name="ArrayOfProcedure">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Procedure" nillable="true" type="tns:Procedure" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfProcedure" nillable="true" type="tns:ArrayOfProcedure" />
+      <xsd:complexType name="ArrayOfService">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Service" nillable="true" type="tns:Service" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfService" nillable="true" type="tns:ArrayOfService" />
+      <xsd:complexType name="Service">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Certifications" nillable="true" type="tns:ArrayOfCertification" />
+          <xsd:element xmlns:q201="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q201:CustomFields" />
+          <xsd:element minOccurs="0" name="Diagnosis" nillable="true" type="tns:Diagnosis" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q202="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="Facility" nillable="true" type="q202:Provider" />
+          <xsd:element minOccurs="0" name="HasCommunications" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsPrimary" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="NdcCode" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="NdcDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Procedure" nillable="true" type="tns:Procedure" />
+          <xsd:element xmlns:q203="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="RequestingProvider" nillable="true" type="q203:Provider" />
+          <xsd:element xmlns:q204="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ServiceType" nillable="true" type="q204:SystemSpecificValueOption" />
+          <xsd:element xmlns:q205="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="TreatingProvider" nillable="true" type="q205:Provider" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Service" nillable="true" type="tns:Service" />
+      <xsd:complexType name="ArrayOfCertification">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Certification" nillable="true" type="tns:Certification" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCertification" nillable="true" type="tns:ArrayOfCertification" />
+      <xsd:complexType name="Certification">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AuthorizedUnits" nillable="true" type="xsd:int" />
+          <xsd:element xmlns:q206="http://trizetto.com/CareAdvance/DataContracts/Member" minOccurs="0" name="Coverage" nillable="true" type="q206:Eligibility" />
+          <xsd:element xmlns:q207="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q207:CustomFields" />
+          <xsd:element minOccurs="0" name="DueDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FacilityNotificationLetterTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="FacilityNotificationTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q208="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="FacilityNotificationType" nillable="true" type="q208:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="FromDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="MemberNotificationLetterTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="MemberNotificationTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q209="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="MemberNotificationType" nillable="true" type="q209:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Payment" nillable="true" type="tns:Payment" />
+          <xsd:element minOccurs="0" name="ProviderNotificationLetterTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ProviderNotificationTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q210="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="ProviderNotificationType" nillable="true" type="q210:SystemSpecificValueOption" />
+          <xsd:element xmlns:q211="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="RegulatoryRequestType" nillable="true" type="q211:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="RequestCreatedOn" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="RequestedUnits" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Status" nillable="true" type="tns:CertificationStatus" />
+          <xsd:element minOccurs="0" name="ToDate" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Certification" nillable="true" type="tns:Certification" />
+      <xsd:complexType name="CertificationStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q212="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" base="q212:SystemSpecificValueOption">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="StatusChangeReason" nillable="true" type="q212:SystemSpecificValueOption" />
+              <xsd:element minOccurs="0" name="StatusChangeReasonNotes" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CertificationStatus" nillable="true" type="tns:CertificationStatus" />
+      <xsd:simpleType name="WorkflowRunMode">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Disabled" />
+          <xsd:enumeration value="ActionsAndDecisions" />
+          <xsd:enumeration value="ActionsOnly" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="WorkflowRunMode" nillable="true" type="tns:WorkflowRunMode" />
+      <xsd:complexType name="CaseProcessingOptions">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CheckForDuplicates" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="CheckIfAuthRequired" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CaseProcessingOptions" nillable="true" type="tns:CaseProcessingOptions" />
+      <xsd:complexType name="AuthRequirementResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="DeterminationMessage" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ProcedureDeterminations" nillable="true" type="tns:ArrayOfProcedureDetermination" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AuthRequirementResult" nillable="true" type="tns:AuthRequirementResult" />
+      <xsd:complexType name="ArrayOfProcedureDetermination">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProcedureDetermination" nillable="true" type="tns:ProcedureDetermination" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfProcedureDetermination" nillable="true" type="tns:ArrayOfProcedureDetermination" />
+      <xsd:complexType name="ProcedureDetermination">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Determination" type="tns:AuthRequirementDetermination" />
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Procedure" nillable="true" type="tns:Procedure" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProcedureDetermination" nillable="true" type="tns:ProcedureDetermination" />
+      <xsd:simpleType name="AuthRequirementDetermination">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Unknown" />
+          <xsd:enumeration value="Required" />
+          <xsd:enumeration value="NotRequired" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="AuthRequirementDetermination" nillable="true" type="tns:AuthRequirementDetermination" />
+      <xsd:complexType name="DrgData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AverageLos" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="Code" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q213="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q213:CustomFields" />
+          <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="EarlyTransferFlag" nillable="true" type="xsd:short" />
+          <xsd:element minOccurs="0" name="EarlyTransferFlagText" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="GeometricLos" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="LosDays" nillable="true" type="xsd:short" />
+          <xsd:element minOccurs="0" name="OutlierThreshold" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="TotalPrice" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="Type" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Version" nillable="true" type="xsd:short" />
+          <xsd:element minOccurs="0" name="Weight" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DrgData" nillable="true" type="tns:DrgData" />
+      <xsd:complexType name="ArrayOfCommunicationDetail">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CommunicationDetail" nillable="true" type="tns:CommunicationDetail" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCommunicationDetail" nillable="true" type="tns:ArrayOfCommunicationDetail" />
+      <xsd:complexType name="CommunicationDetail">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ObjectId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ObjectType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CommunicationDetail" nillable="true" type="tns:CommunicationDetail" />
+      <xsd:complexType name="ArrayOfCertificationAuthStatus">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CertificationAuthStatus" nillable="true" type="tns:CertificationAuthStatus" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCertificationAuthStatus" nillable="true" type="tns:ArrayOfCertificationAuthStatus" />
+      <xsd:complexType name="CertificationAuthStatus">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalCertificationId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Status" nillable="true" type="tns:CertificationStatus" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CertificationAuthStatus" nillable="true" type="tns:CertificationAuthStatus" />
+      <xsd:complexType name="ArrayOfCertificationAuthStatusResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CertificationAuthStatusResponse" nillable="true" type="tns:CertificationAuthStatusResponse" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCertificationAuthStatusResponse" nillable="true" type="tns:ArrayOfCertificationAuthStatusResponse" />
+      <xsd:complexType name="CertificationAuthStatusResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q214="http://trizetto.com/CareAdvance/DataContracts" base="q214:GenericResponse">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalCertificationId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalServiceId" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CertificationAuthStatusResponse" nillable="true" type="tns:CertificationAuthStatusResponse" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/Member" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/Member">
+      <xsd:complexType name="MemberCriteria">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ExternalMember">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="DateOfBirth" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="HCID" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="EmployerId" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="MedicareNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="MedicaidNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="GroupId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="SubscriberId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="SSN" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="OnlyTempMembers" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="CoverageInquiryDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="IncludeMemberPCP" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="MemberCriteria" nillable="true" type="tns:MemberCriteria" />
+      <xsd:complexType name="ExternalMember">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalMemberId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalSystemId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ExternalMember" nillable="true" type="tns:ExternalMember" />
+      <xsd:complexType name="Member">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ExternalMember">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Eligibility" nillable="true" type="tns:ArrayOfEligibility" />
+              <xsd:element minOccurs="0" name="Address" nillable="true" type="tns:ArrayOfAddress" />
+              <xsd:element minOccurs="0" name="Gender" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="DateOfBirth" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="IsActive" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="IsTempMember" nillable="true" type="xsd:boolean" />
+              <xsd:element xmlns:q215="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Relationship" nillable="true" type="q215:SystemSpecificValueOption" />
+              <xsd:element xmlns:q216="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q216:CustomFields" />
+              <xsd:element minOccurs="0" name="HCID" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q217="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Employer" nillable="true" type="q217:SystemSpecificValueOption" />
+              <xsd:element minOccurs="0" name="MedicareNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="MedicaidNumber" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="SubscriberId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="SSN" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="CoverageAsOfInquiryDate" nillable="true" type="tns:ArrayOfEligibility" />
+              <xsd:element xmlns:q218="http://trizetto.com/CareAdvance/DataContracts/Provider" minOccurs="0" name="PrimaryCarePhysician" nillable="true" type="q218:Provider" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Member" nillable="true" type="tns:Member" />
+      <xsd:complexType name="ArrayOfEligibility">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Eligibility" nillable="true" type="tns:Eligibility" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfEligibility" nillable="true" type="tns:ArrayOfEligibility" />
+      <xsd:complexType name="Eligibility">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="SubscriberId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Suffix" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="EffectiveDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="TerminationDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="GroupName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Employer" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PlanName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ProductName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IsPrimary" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ProductId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="GroupId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PlanId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q219="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="EligibilityCustomFields" nillable="true" type="q219:CustomFields" />
+          <xsd:element xmlns:q220="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CoverageCustomFields" nillable="true" type="q220:CustomFields" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Eligibility" nillable="true" type="tns:Eligibility" />
+      <xsd:complexType name="ArrayOfAddress">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+      <xsd:complexType name="Address">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Street" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Street2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Zip" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Address" nillable="true" type="tns:Address" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue">
+      <xsd:complexType name="SystemSpecificValueOption">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Id" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SystemSpecificValueOption" nillable="true" type="tns:SystemSpecificValueOption" />
+      <xsd:complexType name="ArrayOfSystemSpecificValueOption">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SystemSpecificValueOption" nillable="true" type="tns:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfSystemSpecificValueOption" nillable="true" type="tns:ArrayOfSystemSpecificValueOption" />
+      <xsd:simpleType name="EntityType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="UMCase" />
+          <xsd:enumeration value="LOS" />
+          <xsd:enumeration value="Extension" />
+          <xsd:enumeration value="Service" />
+          <xsd:enumeration value="Certification" />
+          <xsd:enumeration value="TaskField" />
+          <xsd:enumeration value="PatientInfo" />
+          <xsd:enumeration value="Eligibility" />
+          <xsd:enumeration value="Coverage" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="EntityType" nillable="true" type="tns:EntityType" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/CustomFields" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/CustomFields">
+      <xsd:complexType name="ArrayOfCustomFieldCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomFieldCriteria" nillable="true" type="tns:CustomFieldCriteria" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCustomFieldCriteria" nillable="true" type="tns:ArrayOfCustomFieldCriteria" />
+      <xsd:complexType name="CustomFieldCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Field" nillable="true" type="tns:CustomUserFieldDefinition" />
+          <xsd:element minOccurs="0" name="IsNotNull" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsNull" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="Type" nillable="true" type="tns:CustomFieldType" />
+          <xsd:element minOccurs="0" name="Value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CustomFieldCriteria" nillable="true" type="tns:CustomFieldCriteria" />
+      <xsd:simpleType name="CustomUserFieldDefinition">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="UserField1" />
+          <xsd:enumeration value="UserField2" />
+          <xsd:enumeration value="UserField3" />
+          <xsd:enumeration value="UserField4" />
+          <xsd:enumeration value="UserField5" />
+          <xsd:enumeration value="UserField6" />
+          <xsd:enumeration value="UserField7" />
+          <xsd:enumeration value="UserField8" />
+          <xsd:enumeration value="UserField9" />
+          <xsd:enumeration value="UserField10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="CustomUserFieldDefinition" nillable="true" type="tns:CustomUserFieldDefinition" />
+      <xsd:simpleType name="CustomFieldType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Member" />
+          <xsd:enumeration value="CMCase" />
+          <xsd:enumeration value="UMCase" />
+          <xsd:enumeration value="Los" />
+          <xsd:enumeration value="Service" />
+          <xsd:enumeration value="Extension" />
+          <xsd:enumeration value="Certificate" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="CustomFieldType" nillable="true" type="tns:CustomFieldType" />
+      <xsd:complexType name="CustomFields">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="MetaDataGuid" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField5" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField6" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField7" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField8" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField9" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserField10" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CustomFields" nillable="true" type="tns:CustomFields" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/Provider" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/Provider">
+      <xsd:complexType name="ProviderSearchCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalSystemId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="ExternalProviderId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="TaxId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="NPI" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Specialty" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="MedicareId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Street" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Zip" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Phone" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Fax" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ServiceDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="TempOnly" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="EntityType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Role" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExcludeNetworkTerminatedProviders" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ExcludeNonPrimaryAddresses" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IncludeProviderAffiliation" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProviderSearchCriteria" nillable="true" type="tns:ProviderSearchCriteria" />
+      <xsd:simpleType name="ProviderType">
+        <xsd:list>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="All">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="Admitting">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="Attending">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="Facility">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="Requesting">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="Surgeon">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="Treating">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PrimaryCarePhysician">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:list>
+      </xsd:simpleType>
+      <xsd:element name="ProviderType" nillable="true" type="tns:ProviderType" />
+      <xsd:complexType name="ArrayOfExternalProvider">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExternalProvider" nillable="true" type="tns:ExternalProvider" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfExternalProvider" nillable="true" type="tns:ArrayOfExternalProvider" />
+      <xsd:complexType name="ExternalProvider">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalProviderId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalSystemId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ExternalProvider" nillable="true" type="tns:ExternalProvider" />
+      <xsd:complexType name="ProviderOverview">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalSystemId" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Npi" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="TaxId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q221="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="NetworkStatus" nillable="true" type="q221:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProviderOverview" nillable="true" type="tns:ProviderOverview" />
+      <xsd:complexType name="Provider">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalSystemId" nillable="true" type="xsd:int" />
+          <xsd:element xmlns:q222="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Title" nillable="true" type="q222:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="NetworkStatus" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Npi" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q223="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Role" nillable="true" type="q223:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="TaxId" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q224="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Type" nillable="true" type="q224:SystemSpecificValueOption" />
+          <xsd:element xmlns:q225="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="SpecialtyList" nillable="true" type="q225:ArrayOfSystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="EffectiveDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="TerminationDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q226="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MedicareIds" nillable="true" type="q226:ArrayOfstring" />
+          <xsd:element minOccurs="0" name="AddressList" nillable="true" type="tns:ArrayOfProviderAddress" />
+          <xsd:element xmlns:q227="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q227:CustomFields" />
+          <xsd:element xmlns:q228="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="NetworkStatusType" nillable="true" type="q228:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Affiliations" nillable="true" type="tns:ArrayOfProviderAffiliation" />
+          <xsd:element minOccurs="0" name="IsCAP" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Provider" nillable="true" type="tns:Provider" />
+      <xsd:complexType name="ArrayOfProviderAddress">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProviderAddress" nillable="true" type="tns:ProviderAddress" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfProviderAddress" nillable="true" type="tns:ArrayOfProviderAddress" />
+      <xsd:complexType name="ProviderAddress">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalAddressType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Street" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Zip" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="County" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Phone" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PhoneExtension" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Fax" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FaxExtension" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Email" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q229="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Type" nillable="true" type="q229:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="EffectiveDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="TerminationDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q230="http://trizetto.com/CareAdvance/DataContracts/CustomFields" minOccurs="0" name="CustomFields" nillable="true" type="q230:CustomFields" />
+          <xsd:element minOccurs="0" name="IsTemporary" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsPrimary" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProviderAddress" nillable="true" type="tns:ProviderAddress" />
+      <xsd:complexType name="ArrayOfProviderAffiliation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProviderAffiliation" nillable="true" type="tns:ProviderAffiliation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfProviderAffiliation" nillable="true" type="tns:ArrayOfProviderAffiliation" />
+      <xsd:complexType name="ProviderAffiliation">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AffiliateProviderId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="AffiliateProviderName" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q231="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AffiliateProviderType" nillable="true" type="q231:SystemSpecificValueOption" />
+          <xsd:element xmlns:q232="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="AffiliationType" nillable="true" type="q232:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="EffectiveDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="TerminationDate" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProviderAffiliation" nillable="true" type="tns:ProviderAffiliation" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xsd:complexType name="ArrayOfstring">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Trizetto.CareAdvance.Service.DataContracts.AppealsGrievances" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Trizetto.CareAdvance.Service.DataContracts.AppealsGrievances">
+      <xsd:complexType name="AppealCriteria">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AppealStatus" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="HasAppeal" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AppealCriteria" nillable="true" type="tns:AppealCriteria" />
+      <xsd:complexType name="ArrayOfAppeal">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Appeal" nillable="true" type="tns:Appeal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfAppeal" nillable="true" type="tns:ArrayOfAppeal" />
+      <xsd:complexType name="Appeal">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CompleteDateTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element xmlns:q233="http://trizetto.com/CareAdvance/DataContracts/UMCase" minOccurs="0" name="CreatedBy" nillable="true" type="q233:User" />
+          <xsd:element minOccurs="0" name="DueDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Expedited" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ExternalAppealId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IsOpen" type="xsd:boolean" />
+          <xsd:element xmlns:q234="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Level" nillable="true" type="q234:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Module" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q235="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Outcome" nillable="true" type="q235:SystemSpecificValueOption" />
+          <xsd:element minOccurs="0" name="Rationale" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ReceivedDate" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Requester" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Reviewer" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q236="http://trizetto.com/CareAdvance/DataContracts/SystemSpecificValue" minOccurs="0" name="Type" nillable="true" type="q236:SystemSpecificValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Appeal" nillable="true" type="tns:Appeal" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/Page" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/Page">
+      <xsd:complexType name="Sort">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="IsAscendingOrder" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Sort" nillable="true" type="tns:Sort" />
+      <xsd:complexType name="Pagination">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ItemsPerPage" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="CurrentPageNumber" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Pagination" nillable="true" type="tns:Pagination" />
+      <xsd:complexType name="PaginationResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Pagination">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="TotalNumberOfPages" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="TotalNumberOfRecords" nillable="true" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="PaginationResponse" nillable="true" type="tns:PaginationResponse" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/Queue" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/Queue">
+      <xsd:complexType name="Queue">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="QueueId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="QueueType" type="tns:QueueType" />
+          <xsd:element minOccurs="0" name="IsActive" type="xsd:boolean" />
+          <xsd:element xmlns:q237="http://trizetto.com/CareAdvance/DataContracts/User" minOccurs="0" name="AssignedUsers" nillable="true" type="q237:ArrayOfUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Queue" nillable="true" type="tns:Queue" />
+      <xsd:simpleType name="QueueType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Unknown" />
+          <xsd:enumeration value="All">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Standard">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Triage">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="System">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="QueueType" nillable="true" type="tns:QueueType" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts/User" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts/User">
+      <xsd:complexType name="ArrayOfUser">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+      <xsd:complexType name="User">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:BaseUser">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="UserNameInfo" nillable="true" type="tns:UserNameInfo" />
+              <xsd:element minOccurs="0" name="OcId" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="SupportExtSso" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ClientType" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="SingleSignonId" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="CMUser" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="IsActive" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="RoleList" nillable="true" type="tns:ArrayOfRole" />
+              <xsd:element minOccurs="0" name="UserType_Verbose" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LogIn" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="NotifyMeAboutAlerts" nillable="true" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="LastLoginTime" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="DisplayData" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LicenseList" nillable="true" type="tns:ArrayOfLicense" />
+              <xsd:element minOccurs="0" name="SecurityLevelVerbose" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalUserList" nillable="true" type="tns:ArrayOfExtendedExternalUser" />
+              <xsd:element minOccurs="0" name="Supervisor" nillable="true" type="tns:Supervisor" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="User" nillable="true" type="tns:User" />
+      <xsd:complexType name="BaseUser">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Contact" nillable="true" type="tns:Contact" />
+          <xsd:element minOccurs="0" name="UserType" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="SecurityLevel" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="HourlyRate" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="OptOut" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="OnHold" nillable="true" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="GroupRestrictionList" nillable="true" type="tns:ArrayOfGroupRestriction" />
+          <xsd:element minOccurs="0" name="OutOfOffice" nillable="true" type="tns:OutOfOffice" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BaseUser" nillable="true" type="tns:BaseUser" />
+      <xsd:complexType name="Contact">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Phone1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Phone1Extension" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Phone2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Phone2Extension" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Email" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="SMS" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Fax" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Organization" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Street" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Zip" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Contact" nillable="true" type="tns:Contact" />
+      <xsd:complexType name="ArrayOfGroupRestriction">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="GroupRestriction" nillable="true" type="tns:GroupRestriction" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfGroupRestriction" nillable="true" type="tns:ArrayOfGroupRestriction" />
+      <xsd:complexType name="GroupRestriction">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="RestrictionGroupId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GroupRestriction" nillable="true" type="tns:GroupRestriction" />
+      <xsd:complexType name="OutOfOffice">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="From" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="To" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Message" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="OutOfOffice" nillable="true" type="tns:OutOfOffice" />
+      <xsd:complexType name="UserNameInfo">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:BaseUserNameInfo">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="DisplayName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="UserNameInfo" nillable="true" type="tns:UserNameInfo" />
+      <xsd:complexType name="BaseUserNameInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Salutation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="MiddleName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BaseUserNameInfo" nillable="true" type="tns:BaseUserNameInfo" />
+      <xsd:complexType name="ArrayOfRole">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+      <xsd:complexType name="Role">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:BaseRole">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="RoleString" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Role" nillable="true" type="tns:Role" />
+      <xsd:complexType name="BaseRole">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="RoleId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BaseRole" nillable="true" type="tns:BaseRole" />
+      <xsd:complexType name="ArrayOfLicense">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="License" nillable="true" type="tns:License" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfLicense" nillable="true" type="tns:ArrayOfLicense" />
+      <xsd:complexType name="License">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:BaseLicense">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="StateNumberVerbose" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="License" nillable="true" type="tns:License" />
+      <xsd:complexType name="BaseLicense">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="LicenseNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="StateNumber" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="BaseLicense" nillable="true" type="tns:BaseLicense" />
+      <xsd:complexType name="ArrayOfExtendedExternalUser">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExtendedExternalUser" nillable="true" type="tns:ExtendedExternalUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfExtendedExternalUser" nillable="true" type="tns:ArrayOfExtendedExternalUser" />
+      <xsd:complexType name="ExtendedExternalUser">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:ExternalUser">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ExternalSystemName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ExtendedExternalUser" nillable="true" type="tns:ExtendedExternalUser" />
+      <xsd:complexType name="ExternalUser">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalUserId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ExternalSystemId" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ExternalUser" nillable="true" type="tns:ExternalUser" />
+      <xsd:complexType name="Supervisor">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExternalUsers" nillable="true" type="tns:ArrayOfExtendedExternalUser" />
+          <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="MiddleName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Supervisor" nillable="true" type="tns:Supervisor" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://trizetto.com/CareAdvance/DataContracts" elementFormDefault="qualified" targetNamespace="http://trizetto.com/CareAdvance/DataContracts">
+      <xsd:complexType name="GenericRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="SessionId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GenericRequest" nillable="true" type="tns:GenericRequest" />
+      <xsd:complexType name="GenericResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Success" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ReturnId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfServiceError" />
+          <xsd:element minOccurs="0" name="ReturnMessage" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Warnings" nillable="true" type="tns:ArrayOfServiceError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GenericResponse" nillable="true" type="tns:GenericResponse" />
+      <xsd:complexType name="ArrayOfServiceError">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ServiceError" type="tns:ServiceError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfServiceError" nillable="true" type="tns:ArrayOfServiceError" />
+      <xsd:complexType name="ServiceError">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Code" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ServiceError" nillable="true" type="tns:ServiceError" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UMCase_SearchCases_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCases" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_SearchCases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_CAPSearchCases_InputMessage">
+    <wsdl:part name="parameters" element="tns:CAPSearchCases" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_CAPSearchCases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CAPSearchCasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_GetCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCase" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_GetCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UnlockCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockCase" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UnlockCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCase" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddExtension_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExtension" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddExtension_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddCertification_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCertification" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddCertification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCertificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddService_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddService" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_CreateCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCase" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_CreateCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_InsertForeignCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertForeignCase" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_InsertForeignCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertForeignCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateForeignCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateForeignCase" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateForeignCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateForeignCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateService_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateService" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateLos_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLos" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateLos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLosResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateCertification_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCertification" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateCertification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCertificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateExtension_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExtension" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateExtension_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddDrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDrg" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_AddDrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_CreateRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoute" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_CreateRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateCertificationStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCertificationStatus" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_UpdateCertificationStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCertificationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_PreLoadMemberBrsCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreLoadMemberBrsCache" />
+  </wsdl:message>
+  <wsdl:message name="UMCase_PreLoadMemberBrsCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreLoadMemberBrsCacheResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UMCase">
+    <wsdl:operation name="SearchCases">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/SearchCases" message="tns:UMCase_SearchCases_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/SearchCasesResponse" message="tns:UMCase_SearchCases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CAPSearchCases">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/CAPSearchCases" message="tns:UMCase_CAPSearchCases_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/CAPSearchCasesResponse" message="tns:UMCase_CAPSearchCases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCase">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/GetCase" message="tns:UMCase_GetCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/GetCaseResponse" message="tns:UMCase_GetCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockCase">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UnlockCase" message="tns:UMCase_UnlockCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UnlockCaseResponse" message="tns:UMCase_UnlockCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCase">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateCase" message="tns:UMCase_UpdateCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateCaseResponse" message="tns:UMCase_UpdateCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExtension">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddExtension" message="tns:UMCase_AddExtension_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddExtensionResponse" message="tns:UMCase_AddExtension_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCertification">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddCertification" message="tns:UMCase_AddCertification_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddCertificationResponse" message="tns:UMCase_AddCertification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddService">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddService" message="tns:UMCase_AddService_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddServiceResponse" message="tns:UMCase_AddService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCase">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/CreateCase" message="tns:UMCase_CreateCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/CreateCaseResponse" message="tns:UMCase_CreateCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertForeignCase">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/InsertForeignCase" message="tns:UMCase_InsertForeignCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/InsertForeignCaseResponse" message="tns:UMCase_InsertForeignCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateForeignCase">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateForeignCase" message="tns:UMCase_UpdateForeignCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateForeignCaseResponse" message="tns:UMCase_UpdateForeignCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateService" message="tns:UMCase_UpdateService_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateServiceResponse" message="tns:UMCase_UpdateService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLos">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateLos" message="tns:UMCase_UpdateLos_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateLosResponse" message="tns:UMCase_UpdateLos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertification">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateCertification" message="tns:UMCase_UpdateCertification_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateCertificationResponse" message="tns:UMCase_UpdateCertification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExtension">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateExtension" message="tns:UMCase_UpdateExtension_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateExtensionResponse" message="tns:UMCase_UpdateExtension_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDrg">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddDrg" message="tns:UMCase_AddDrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/AddDrgResponse" message="tns:UMCase_AddDrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoute">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/CreateRoute" message="tns:UMCase_CreateRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/CreateRouteResponse" message="tns:UMCase_CreateRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertificationStatus">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateCertificationStatus" message="tns:UMCase_UpdateCertificationStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/UpdateCertificationStatusResponse" message="tns:UMCase_UpdateCertificationStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreLoadMemberBrsCache">
+      <wsdl:input wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/PreLoadMemberBrsCache" message="tns:UMCase_PreLoadMemberBrsCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://trizetto.com/CareAdvance/UMCaseService/UMCase/PreLoadMemberBrsCacheResponse" message="tns:UMCase_PreLoadMemberBrsCache_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="UMCase">
+    <wsdl:port name="BasicHttpBinding_UMCase" binding="i0:BasicHttpBinding_UMCase">
+      <soap:address location="https://abn-ode-web-c12.ode.trizetto.com/SOAFServices/UMCaseService/UMCase.svc/basic_secure" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_UMCase" binding="i0:WSHttpBinding_UMCase">
+      <soap12:address location="https://abn-ode-web-c12.ode.trizetto.com/SOAFServices/UMCaseService/UMCase.svc/ws_secure" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://abn-ode-web-c12.ode.trizetto.com/SOAFServices/UMCaseService/UMCase.svc/ws_secure</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

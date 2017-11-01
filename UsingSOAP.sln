@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingSOAP", "UsingSOAP\UsingSOAP.csproj", "{CE06C4CD-6B58-4702-BCF8-AB7092D8C4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateCase", "CreateCase\CreateCase.csproj", "{155EEB5B-862B-4685-8044-ADEB27EC6543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_Learnings", "CSharp_Learnings\CSharp_Learnings.csproj", "{40E77014-3F01-442E-9225-93AF0E2258B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE06C4CD-6B58-4702-BCF8-AB7092D8C4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE06C4CD-6B58-4702-BCF8-AB7092D8C4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE06C4CD-6B58-4702-BCF8-AB7092D8C4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE06C4CD-6B58-4702-BCF8-AB7092D8C4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155EEB5B-862B-4685-8044-ADEB27EC6543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155EEB5B-862B-4685-8044-ADEB27EC6543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155EEB5B-862B-4685-8044-ADEB27EC6543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155EEB5B-862B-4685-8044-ADEB27EC6543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E77014-3F01-442E-9225-93AF0E2258B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E77014-3F01-442E-9225-93AF0E2258B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E77014-3F01-442E-9225-93AF0E2258B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E77014-3F01-442E-9225-93AF0E2258B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
