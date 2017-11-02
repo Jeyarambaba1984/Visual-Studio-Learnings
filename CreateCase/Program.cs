@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CreateCase.UMService;
 using System.Globalization;
+using System.Net;
 
 namespace CreateCase
 {
@@ -32,9 +33,12 @@ namespace CreateCase
 
             try
             {
+                Console.WriteLine("Before HTTP Bindings");
                 UMCase1Client service = new UMCase1Client("BasicHttpBinding_UMCase");
                 service.ClientCredentials.UserName.UserName = "JeyaramB";
                 service.ClientCredentials.UserName.Password = "Sadhguru@123";
+                Console.WriteLine("After Credentials");
+                ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };
                 var request = new CreateCaseSvcRequest()
                 {
                     SessionId = string.Empty,
@@ -173,7 +177,11 @@ namespace CreateCase
                         },
                     },
                 };
+                Console.WriteLine("After data");
                 var response = service.CreateCase(request);
+                Console.WriteLine("UM Request ID "+ response.ExternalCaseId);
+                Console.WriteLine("UM Request Response " + response.ReturnMessage);
+                Console.WriteLine("UM Request Response Status " + response.Success);
             }
             catch (Exception ex)
             {
