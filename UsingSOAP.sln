@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateCase", "CreateCase\Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_Learnings", "CSharp_Learnings\CSharp_Learnings.csproj", "{40E77014-3F01-442E-9225-93AF0E2258B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService.Specflow.Test", "WebServiceTest.cs\WebService.Specflow.Test.csproj", "{CACD934F-D97F-4E12-9535-D76F669543D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService.Base", "WebService.Base\WebService.Base.csproj", "{C1DD86CB-AD8E-4C40-A330-9D3C13E9726E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{40E77014-3F01-442E-9225-93AF0E2258B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40E77014-3F01-442E-9225-93AF0E2258B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40E77014-3F01-442E-9225-93AF0E2258B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACD934F-D97F-4E12-9535-D76F669543D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACD934F-D97F-4E12-9535-D76F669543D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACD934F-D97F-4E12-9535-D76F669543D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACD934F-D97F-4E12-9535-D76F669543D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1DD86CB-AD8E-4C40-A330-9D3C13E9726E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1DD86CB-AD8E-4C40-A330-9D3C13E9726E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1DD86CB-AD8E-4C40-A330-9D3C13E9726E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1DD86CB-AD8E-4C40-A330-9D3C13E9726E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
