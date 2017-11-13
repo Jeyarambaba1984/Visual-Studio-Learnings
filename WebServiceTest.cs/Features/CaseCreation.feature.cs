@@ -75,7 +75,7 @@ namespace WebServiceTest.cs.Features
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.Given("I set up and Create Case Instance for WebService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I set up and Create Case Instance for UMcase WebService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }
