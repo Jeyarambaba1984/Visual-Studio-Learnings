@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-
+using NUnit.Framework;
 
 namespace WebService.Base.Helpers
 {
-    class WebserviceHelpers
+    public class WebserviceHelpers
     {
-        public void Getappconfig()
+        public static void Getappconfig()
         {   
-            string userName = ConfigurationManager.AppSettings["restartfacetspartnershipusername"];
-
+            string _userName = ConfigurationManager.AppSettings["caeusername"];
+            string _password = ConfigurationManager.AppSettings["caeuserpassword"];
+            string _Binding = ConfigurationManager.AppSettings["binding"];
+            //string _password = ConfigurationManager.AppSettings["caeuserpassword"];
         }
     }
 }
+
+

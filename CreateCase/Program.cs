@@ -33,11 +33,11 @@ namespace CreateCase
 
             try
             {
-                Console.WriteLine("Before HTTP Bindings");
+                
                 UMCase1Client service = new UMCase1Client("BasicHttpBinding_UMCase");
                 service.ClientCredentials.UserName.UserName = "JeyaramB";
                 service.ClientCredentials.UserName.Password = "Sadhguru@123";
-                Console.WriteLine("After Credentials");
+                
                 ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };
                 var request = new CreateCaseSvcRequest()
                 {
