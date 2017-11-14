@@ -16,7 +16,9 @@ namespace WebService.Base.Helpers
         public static string _binding { get; set; }
         public static string _username { get; set; }
         public static string _password{ get; set; }
-       
+        public static UMCase1Client _Service = null;
+
+
 
         public WebserviceHelpers()
         {
@@ -30,10 +32,10 @@ namespace WebService.Base.Helpers
         public void createInstance(string ResourceType)
         {
             Console.WriteLine("In Create Instance Method");
-            UMCase1Client Service = new UMCase1Client("BasicHttpBinding_UMCase");
+            _Service = new UMCase1Client("BasicHttpBinding_UMCase");
             //BasicHttpBinding_UMCase
-            Service.ClientCredentials.UserName.UserName = _username;
-            Service.ClientCredentials.UserName.Password = _password;
+            _Service.ClientCredentials.UserName.UserName = _username;
+            _Service.ClientCredentials.UserName.Password = _password;
         }
 
         private static void Getappconfigvalues()
@@ -45,6 +47,18 @@ namespace WebService.Base.Helpers
         }
 
         
+        //public string ICDCodesettings(string Diagcodesettype)
+        //{
+        //    if (Diagcodesettype.ToLower().Contains("icd9"))
+        //    {
+
+        //    }
+        //    else if (Diagcodesettype.ToLower().Contains("icd10"))
+        //    {
+
+        //    }
+        //    return null;
+        //}
         public void IgnoreSSLWarnings()
         {
             ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };

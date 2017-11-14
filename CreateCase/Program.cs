@@ -115,11 +115,13 @@ namespace CreateCase
                                         ToDate=DateTime.Now,
                                     },
                                 },
+                                
                                 Diagnosis = new Diagnosis()
                                 {
                                     Code="428.1",
-                                    CodeSetId=DiagnosisCodeSet.ICD9,
+                                    CodeSetId= DiagnosisCodeSet.ICD9,
                                     Description="LEFT HEART FAILURE(ICD9 428.1)"
+                                    
                                 },
 
                                 IsPrimary=true,

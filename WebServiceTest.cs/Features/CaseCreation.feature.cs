@@ -77,6 +77,164 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given("I set up and Create Case Instance for UMcase WebService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ResourceType",
+                        "ResourceValue"});
+            table1.AddRow(new string[] {
+                        "ExternalMemberId",
+                        "140651"});
+            table1.AddRow(new string[] {
+                        "ExternalSystemId",
+                        "2"});
+            table1.AddRow(new string[] {
+                        "ShouldReturnBrsActions",
+                        "true"});
+            table1.AddRow(new string[] {
+                        "CareTypeDescription",
+                        "Elective"});
+            table1.AddRow(new string[] {
+                        "CareId",
+                        "1"});
+            table1.AddRow(new string[] {
+                        "CasePriorityDescription",
+                        "Medium"});
+            table1.AddRow(new string[] {
+                        "CasePriorityId",
+                        "3"});
+            table1.AddRow(new string[] {
+                        "CaseSettingDescription",
+                        "Outpatient"});
+            table1.AddRow(new string[] {
+                        "CaseSettingId",
+                        "2"});
+            table1.AddRow(new string[] {
+                        "CaseTypeId",
+                        "1"});
+            table1.AddRow(new string[] {
+                        "CaseTypeDescription",
+                        "Medical/Surgical"});
+            table1.AddRow(new string[] {
+                        "IsUrgent",
+                        "false"});
+            table1.AddRow(new string[] {
+                        "PlaceOfServiceId",
+                        "33"});
+            table1.AddRow(new string[] {
+                        "PlaceOfServiceDescription",
+                        "Custodial Care Facility"});
+            table1.AddRow(new string[] {
+                        "RequesterId",
+                        "300343434"});
+            table1.AddRow(new string[] {
+                        "RequesterName",
+                        "Terry Biggs"});
+            table1.AddRow(new string[] {
+                        "RequesterPhone",
+                        "8888881212"});
+            table1.AddRow(new string[] {
+                        "RequesterTypeId",
+                        "1"});
+            table1.AddRow(new string[] {
+                        "RequesterTypeDescription",
+                        "Web Physician Submission"});
+            table1.AddRow(new string[] {
+                        "ReviewTypeId",
+                        "2"});
+            table1.AddRow(new string[] {
+                        "ReviewTypeDescription",
+                        "Pre-Authorization"});
+            table1.AddRow(new string[] {
+                        "AuthorizationUnits",
+                        "008"});
+            table1.AddRow(new string[] {
+                        "RequestedUnits",
+                        "50"});
+            table1.AddRow(new string[] {
+                        "DiagnosisCode",
+                        "428.1"});
+            table1.AddRow(new string[] {
+                        "DiagnosisId",
+                        "DiagnosisCodeSet"});
+            table1.AddRow(new string[] {
+                        "DiagnosissetID",
+                        "ICD9,ICD10"});
+            table1.AddRow(new string[] {
+                        "DiagnosisDescription",
+                        "LEFT HEART FAILURE(ICD9 428.1)"});
+            table1.AddRow(new string[] {
+                        "IsPrimary",
+                        "true"});
+            table1.AddRow(new string[] {
+                        "ProcedureCode",
+                        "12001"});
+            table1.AddRow(new string[] {
+                        "ProcedureCodeSetId",
+                        "ProcedureCodeSet.CPT"});
+            table1.AddRow(new string[] {
+                        "ProcedureDescription",
+                        "SMPL RPR SUPFC S/N/AX/G/T 2.5CM/"});
+            table1.AddRow(new string[] {
+                        "RequestingProviderExternalId",
+                        "IHMPRAC00012"});
+            table1.AddRow(new string[] {
+                        "RequestingProviderName",
+                        "Reeves, Anthony"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressExternalId",
+                        "IHMPRAC00012"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressExternalAddressType",
+                        "001"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressStreet",
+                        "1021 CVS Drive"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressCity",
+                        "Flemington"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressState",
+                        "NJ"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressZip",
+                        "08822"});
+            table1.AddRow(new string[] {
+                        "ProviderIsPrimary",
+                        "false"});
+            table1.AddRow(new string[] {
+                        "ServiceTypeId",
+                        "33"});
+            table1.AddRow(new string[] {
+                        "ServiceTypeDescription",
+                        "Acupuncture"});
+            table1.AddRow(new string[] {
+                        "TreatingProviderExternalId",
+                        "IHMPRAC00012"});
+            table1.AddRow(new string[] {
+                        "TreatingProviderName",
+                        "Reeves, Anthony"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressExternalId",
+                        "IHMPRAC00012"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressExternalAddressType",
+                        "001"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressStreet",
+                        "1021 CVS Drive"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressCity",
+                        "Flemington"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressState",
+                        "NJ"});
+            table1.AddRow(new string[] {
+                        "ProviderAddressZip",
+                        "08822"});
+#line 10
+ testRunner.When("I fill in all the below resources", ((string)(null)), table1, "When ");
+#line 62
+ testRunner.And("I verify that UM Case Id is created through response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
     }
