@@ -1,4 +1,5 @@
 ﻿using CreateCase.UMService;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,9 @@ namespace WebServiceTest.cs.Stepdefinitions
             _response = WebserviceHelpers._Service.CreateCase(_request);
             Console.WriteLine("UM Request ID " + _response.ExternalCaseId);
             Console.WriteLine("UM Request Response " + _response.ReturnMessage);
+            Assert.That(_response.ReturnMessage.ToLower().Contains("success"), "Webservice response may not be successful");
             Console.WriteLine("UM Request Response Status " + _response.Success);
+            Assert.That(_response.Success.Equals(true), "Unsuccessful Response");
         }
 
 
